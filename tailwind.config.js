@@ -8,11 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: {
-          DEFAULT: "#000000",
-          100: "#000319",
+        primary: {
+          DEFAULT: "#222532",
+          60: "rgba(34,37,50,0.6)",
         },
+        secondary: "#282C3E",
+        tertiary: "#474C65",
+        quaternary: "#141724",
       },
+    },
+    fontFamily: {
+      text: ["Poppins Regular"],
+      title: ["Poppins SemiBold"],
     },
   },
   plugins: [],
