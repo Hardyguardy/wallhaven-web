@@ -24,8 +24,8 @@ const Tabs = ({}) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <header className="px-11 py-6">
-      <nav>
+    <header className="bg-secondary pt-6 flex justify-center  fixed bottom-0 w-full   ">
+      <nav className="flex flex-row gap-20 mb-6  ">
         {tabs.map(({ name }) => {
           let icon = "";
 
@@ -42,6 +42,7 @@ const Tabs = ({}) => {
           }
           return (
             <Icon
+              key={name}
               className={clsx(
                 "h-6 w-6 stroke-2",
                 isFocused ? "stroke-white" : "stroke-tertiary"
