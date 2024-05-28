@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run svg && next dev",
+    "dev": "next dev",
+    "dev+": "npm run svg && next dev",
     "build": "npm run svg && next build",
     "start": "next start",
     "lint": "next lint",
