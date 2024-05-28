@@ -4,7 +4,7 @@ import Tabs from "@/components/Tabs";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden mx-auto sm:px-10 px-5 pt-4 ">
+    <main className=" overflow-hidden mx-auto sm:px-10 px-5 pt-4 ">
       <div className="">
         {/* <Menu /> */}
         <div className="">
