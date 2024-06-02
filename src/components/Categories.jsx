@@ -4,7 +4,7 @@ import { galleries } from "lib/data";
 
 const Categories = () => {
   return (
-    <div className="screen" style={{ padding: "0 22px" }}>
+    <div style={{ padding: "0 22px" }}>
       <h1 className="text-3xl font-bold pt-10">Categories</h1>
 
       <div className="pt-10 grid grid-cols-2 gap-3">
