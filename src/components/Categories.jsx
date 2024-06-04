@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { galleries } from "lib/data";
+import Title from "./Title";
 
 const Categories = () => {
   return (
     <div style={{ padding: "0 22px" }}>
-      <h1 className="text-3xl font-bold pt-10">Categories</h1>
-
       <div className="pt-10 grid grid-cols-2 gap-3">
         {galleries.map((item, index) => (
           <div

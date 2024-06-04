@@ -3,13 +3,12 @@ import Menu from "@/components/Menu";
 import Tabs from "@/components/Tabs";
 import Title from "@/components/Title";
 
-export default function Home() {
+export default function Favorites() {
   return (
     <>
       {/* <Menu /> */}
 
-      <Title>Categories</Title>
-      <Categories />
+      <Title>Favorites</Title>
     </>
   );
 }
