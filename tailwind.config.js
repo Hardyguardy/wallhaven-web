@@ -10,6 +10,7 @@ module.exports = {
         primary: {
           DEFAULT: "#222532",
           60: "rgba(34,37,50,0.6)",
+          85: "rgba(34,37,50,0.85)",
         },
         secondary: "#282C3E",
         tertiary: "#474C65",
