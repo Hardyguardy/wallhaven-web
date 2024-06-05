@@ -2,23 +2,23 @@
 @layer base {
   html,
   body {
-    height: 100%;
-    background-color: #1a202c;
-    margin: 0;
-    padding: 0;
-    color: white;
+    @apply h-full bg-bg text-white;
   }
 }
+
 @tailwind components;
 @layer components {
   .screen {
     @apply min-h-full bg-primary;
   }
+
   .h1 {
     @apply font-title text-[42px] leading-[52px] text-white;
   }
+
   .caption {
     @apply font-text text-[14px] leading-[16px] text-white;
   }
 }
+
 @tailwind utilities;
