@@ -1,16 +1,18 @@
 "use client";
 
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { useEffect, useState } from "react";
 
 const Title = ({ children }) => {
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
+    const distance = 75;
+
     const scrollFunction = () => {
       if (
-        document.body.scrollTop > 150 ||
-        document.documentElement.scrollTop > 150
+        document.body.scrollTop > distance ||
+        document.documentElement.scrollTop > distance
       ) {
         setIsSticky(true);
       } else {
@@ -22,19 +24,17 @@ const Title = ({ children }) => {
   }, []);
 
   return (
-    <div
-      className={clsx(
-        isSticky &&
-          "justify-center -translate-x-6 w-[calc(100%+48px)] top-0 py-2 bg-primary sticky z-10",
-        "flex transition-all"
-      )}
-    >
-      <h1
-        className={clsx(isSticky && "text-lg", "text-3xl font-bold text-white")}
+    <>
+      <h1 className="text-4xl font-semibold">{children}</h1>
+      <div
+        className={clsx(
+          "fixed left-0 top-0 z-10 w-full bg-secondary py-2 text-center transition",
+          !isSticky && "-translate-y-full opacity-0",
+        )}
       >
-        {children}
-      </h1>
-    </div>
+        <h1 className="text-xl font-semibold">{children}</h1>
+      </div>
+    </>
   );
 };
 

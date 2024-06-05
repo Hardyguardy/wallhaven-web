@@ -1,23 +1,22 @@
 @tailwind base;
 @layer base {
-  html,
+  html {
+    @apply min-h-full bg-primary font-body text-base font-normal text-white;
+  }
+
   body {
-    @apply h-full bg-bg text-white;
+    @apply min-h-screen;
   }
 }
 
 @tailwind components;
 @layer components {
-  .screen {
-    @apply min-h-full bg-primary;
-  }
-
   .h1 {
-    @apply font-title text-[42px] leading-[52px] text-white;
+    @apply text-[42px] font-semibold leading-[52px] text-white;
   }
 
   .caption {
-    @apply font-text text-[14px] leading-[16px] text-white;
+    @apply text-[14px] leading-[16px] text-white;
   }
 }
 
