@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { galleries } from "lib/data";
-import Title from "./Title";
 
 const Categories = () => {
   return (
