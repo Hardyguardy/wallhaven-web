@@ -23,7 +23,7 @@ const Tabs = ({}) => {
   const [activeTab, setActiveTab] = useState("categories");
 
   return (
-    <header className="bg-secondary bottom-0 left-0 right-0 sticky">
+    <header className="sticky bottom-0 left-0 right-0 bg-secondary">
       <nav className="grid grid-cols-3">
         {tabs.map(({ name, path }) => {
           let icon = "";
@@ -32,7 +32,7 @@ const Tabs = ({}) => {
             return (
               <button className="flex justify-center py-6" key={name}>
                 <Icon
-                  className="h-6 w-6 stroke-2 stroke-tertiary"
+                  className="h-6 w-6 stroke-tertiary stroke-2"
                   name="bars"
                 />
               </button>
@@ -57,7 +57,7 @@ const Tabs = ({}) => {
               <Icon
                 className={clsx(
                   "h-6 w-6 stroke-2",
-                  activeTab === name ? "stroke-white" : "stroke-tertiary"
+                  activeTab === name ? "stroke-white" : "stroke-tertiary",
                 )}
                 name={icon}
               />

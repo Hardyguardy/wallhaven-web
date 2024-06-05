@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <main>
+        <main className="min-h-screen flex flex-col justify-between">
           <div className="p-6 flex flex-col gap-6">{children}</div>
           <Tabs />
         </main>

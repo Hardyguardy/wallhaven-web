@@ -9,14 +9,14 @@ const Categories = () => {
         <div key={item.id} className="relative overflow-hidden rounded-[10px]">
           <Link href={`/${item.name}`}>
             <Image
-              className="w-full aspect-square"
+              className="aspect-square w-full"
               width={300}
               height={300}
               src={item.cover}
               alt={item.name}
             />
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 to-transparent">
-              <p className="px-4 py-3 font-title text-xl leading-6 text-white">
+              <p className="font-title px-4 py-3 text-xl leading-6 text-white">
                 {item.name}
               </p>
             </div>
