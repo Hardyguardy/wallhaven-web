@@ -3,6 +3,7 @@
 import Icon from "@/components/Icon";
 import { clsx } from "clsx";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const tabs = [
@@ -20,10 +21,13 @@ const tabs = [
 ];
 
 const Tabs = ({}) => {
-  const [activeTab, setActiveTab] = useState("categories");
+  const pathname = usePathname();
+  const [activeTab, setActiveTab] = useState(
+    pathname.includes("favorites") ? "favorites" : "categories",
+  );
 
   return (
-    <header className="sticky bottom-0 left-0 right-0 bg-secondary">
+    <header className="sticky bottom-0 bg-secondary">
       <nav className="grid grid-cols-3">
         {tabs.map(({ name, path }) => {
           let icon = "";
