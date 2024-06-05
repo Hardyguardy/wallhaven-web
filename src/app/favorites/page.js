@@ -6,8 +6,6 @@ import Title from "@/components/Title";
 export default function Favorites() {
   return (
     <>
-      {/* <Menu /> */}
-
       <Title>Favorites</Title>
     </>
   );
