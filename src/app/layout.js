@@ -1,23 +1,17 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
 import Tabs from "@/components/Tabs";
+import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Wallhaven",
-  description: " Wallpapers from Wallhaven",
-};
-
-export default function RootLayout({ children }) {
+const Layout = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <main>
-          {children}
+          <div className="p-6 flex flex-col gap-6">{children}</div>
           <Tabs />
         </main>
       </body>
     </html>
   );
-}
+};
+
+export default Layout;

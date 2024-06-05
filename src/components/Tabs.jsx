@@ -1,15 +1,13 @@
 "use client";
 
-import Link from "next/link";
-
-import { clsx } from "clsx";
-import { useState } from "react";
 import Icon from "@/components/Icon";
+import { clsx } from "clsx";
+import Link from "next/link";
+import { useState } from "react";
 
 const tabs = [
   {
     name: "drawer",
-    path: "/",
   },
   {
     name: "categories",
@@ -23,16 +21,22 @@ const tabs = [
 
 const Tabs = ({}) => {
   const [activeTab, setActiveTab] = useState("categories");
-  let Component = "div";
 
   return (
-    <header className="bg-secondary pt-6 flex justify-center bottom-0 left-0 right-0 fixed w-full">
-      <nav className="flex flex-row gap-20 mb-6  ">
+    <header className="bg-secondary bottom-0 left-0 right-0 sticky">
+      <nav className="grid grid-cols-3">
         {tabs.map(({ name, path }) => {
           let icon = "";
 
           if (name === "drawer") {
-            icon = "bars";
+            return (
+              <button className="flex justify-center py-6" key={name}>
+                <Icon
+                  className="h-6 w-6 stroke-2 stroke-tertiary"
+                  name="bars"
+                />
+              </button>
+            );
           }
 
           if (name === "categories") {
@@ -42,21 +46,21 @@ const Tabs = ({}) => {
           if (name === "favorites") {
             icon = "bookmarks";
           }
+
           return (
-            <Link href={path} key={name}>
-              <button
-                disabled={name === "drawer"}
-                className="flex items-center"
-                onClick={() => setActiveTab(name)}
-              >
-                <Icon
-                  className={clsx(
-                    "h-6 w-6 stroke-2",
-                    activeTab === name ? "stroke-white" : "stroke-tertiary"
-                  )}
-                  name={icon}
-                />
-              </button>
+            <Link
+              className="flex justify-center py-6"
+              href={path}
+              onClick={() => setActiveTab(name)}
+              key={name}
+            >
+              <Icon
+                className={clsx(
+                  "h-6 w-6 stroke-2",
+                  activeTab === name ? "stroke-white" : "stroke-tertiary"
+                )}
+                name={icon}
+              />
             </Link>
           );
         })}
