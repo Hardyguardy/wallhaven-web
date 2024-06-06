@@ -32,7 +32,7 @@ const Title = ({ children }) => {
           !isSticky && "-translate-y-full opacity-0",
         )}
       >
-        <h1 className="text-xl font-semibold">{children}</h1>
+        <span className="text-xl font-semibold">{children}</span>
       </div>
     </>
   );

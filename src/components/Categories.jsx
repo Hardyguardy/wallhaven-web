@@ -8,7 +8,7 @@ const Categories = () => {
         <div className="relative overflow-hidden rounded-xl" key={id}>
           <button className="block">
             <Image src={cover} width={500} height={500} alt={name} />
-            <div className="from-primary-85 absolute bottom-0 left-0 w-full bg-gradient-to-t to-transparent text-left">
+            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-85 to-transparent text-left">
               <h2 className="px-2 py-3 text-lg font-semibold leading-6">
                 {name}
               </h2>
