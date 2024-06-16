@@ -5,11 +5,11 @@ import Link from "next/link";
 const Categories = () => {
   return (
     <div className="grid grid-cols-2 gap-3">
-      {galleries.map(({ id, name, cover, query }) => (
+      {galleries.map(({ id, name, cover }) => (
         <div className="relative overflow-hidden rounded-xl" key={id}>
           <Link
             className="block"
-            href={{ pathname: id.toString(), query }}
+            href={{ pathname: name.toLowerCase() }}
             key={id}
           >
             <Image src={cover} width={500} height={500} alt={name} />

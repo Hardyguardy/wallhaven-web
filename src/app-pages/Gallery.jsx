@@ -5,7 +5,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { apiUrl } from "lib/data";
 import { useEffect, useState } from "react";
 
-const Gallery = ({ id, query }) => {
+const Gallery = ({ name, query }) => {
   const [gridData, setGridData] = useState([]);
   const [updatedQuery, setUpdatedQuery] = useState(query);
   const [isNewDataLoading, setIsNewDataLoading] = useState(false);
@@ -28,7 +28,7 @@ const Gallery = ({ id, query }) => {
 
   const { isLoading, isError, data, isFetching, fetchNextPage, refetch } =
     useInfiniteQuery({
-      queryKey: ["gallery", id],
+      queryKey: ["gallery", name],
       queryFn: getImages,
       getNextPageParam: (page) => {
         const { current_page: currentPage, last_page: lastPage } = page.meta;
