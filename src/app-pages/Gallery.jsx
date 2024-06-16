@@ -7,14 +7,10 @@ import { useEffect, useState } from "react";
 
 const Gallery = ({ name, query }) => {
   const [gridData, setGridData] = useState([]);
-  const [updatedQuery, setUpdatedQuery] = useState(query);
-  const [isNewDataLoading, setIsNewDataLoading] = useState(false);
 
   const getImages = async ({ pageParam = 1 }) => {
     try {
-      const response = await fetch(
-        `${apiUrl}${updatedQuery}&page=${pageParam}`,
-      );
+      const response = await fetch(`${apiUrl}${query}&page=${pageParam}`);
 
       const json = await response.json();
 
@@ -59,16 +55,6 @@ const Gallery = ({ name, query }) => {
     }
   }, [data]);
 
-  useEffect(() => {
-    if (!isFetching) {
-      setIsNewDataLoading(false);
-    }
-  }, [isFetching]);
-
-  useEffect(() => {
-    console.log(gridData);
-  }, [gridData]);
-
   return (
     <>
       {isLoading ? (
@@ -84,7 +70,6 @@ const Gallery = ({ name, query }) => {
                 fetchNextPage();
               }
             }}
-            isNewDataLoading={isNewDataLoading}
           />
         )
       )}
