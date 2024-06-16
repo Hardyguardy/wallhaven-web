@@ -1,7 +1,7 @@
 import Categories from "@/components/Categories";
 import Title from "@/components/Title";
 
-const Home = () => {
+const PageCategories = () => {
   return (
     <>
       <Title>Categories</Title>
@@ -10,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default PageCategories;

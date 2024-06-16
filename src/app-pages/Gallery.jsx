@@ -1,13 +1,11 @@
 "use client";
 
-import Gallery from "@/components/Gallery";
-
+import Grid from "@/components/Grid";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import { apiUrl } from "lib/data";
 import { useEffect, useState } from "react";
 
-import { apiUrl } from "lib/data";
-
-const GalleryHandler = ({ id, query }) => {
+const Gallery = ({ id, query }) => {
   const [gridData, setGridData] = useState([]);
   const [updatedQuery, setUpdatedQuery] = useState(query);
   const [isNewDataLoading, setIsNewDataLoading] = useState(false);
@@ -71,7 +69,27 @@ const GalleryHandler = ({ id, query }) => {
     console.log(gridData);
   }, [gridData]);
 
-  return <Gallery isLoading={isLoading} isError={isError} />;
+  return (
+    <>
+      {isLoading ? (
+        <div className="flex h-full items-center justify-center">
+          <div className="loader">Loading...</div>
+        </div>
+      ) : (
+        !isError && (
+          <Grid
+            data={gridData}
+            onEndReached={() => {
+              if (!isFetching) {
+                fetchNextPage();
+              }
+            }}
+            isNewDataLoading={isNewDataLoading}
+          />
+        )
+      )}
+    </>
+  );
 };
 
-export default GalleryHandler;
+export default Gallery;

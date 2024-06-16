@@ -1,7 +1,7 @@
 import Title from "@/components/Title";
 
-const Favorites = () => {
+const PageFavorites = () => {
   return <Title>Favorites</Title>;
 };
 
-export default Favorites;
+export default PageFavorites;

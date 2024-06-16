@@ -1,19 +1,16 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-
-import GalleryHandler from "@/middleware/GalleryHandler";
+import Gallery from "@/app-pages/Gallery";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
-const GalleryPage = ({ params }) => {
-  const searchParams = useSearchParams();
 
+const PageGallery = ({ params, searchParams }) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <GalleryHandler id={params.id} query={searchParams} />;
+      <Gallery id={params.id} query={new URLSearchParams(searchParams)} />
     </QueryClientProvider>
   );
 };
 
-export default GalleryPage;
+export default PageGallery;
